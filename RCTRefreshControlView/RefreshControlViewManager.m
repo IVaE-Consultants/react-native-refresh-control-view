@@ -29,7 +29,7 @@ RCT_EXPORT_METHOD(create:(nonnull NSNumber *)reactTag
             addTarget:self action:@selector(didBeginRefreshing:)
             forControlEvents:UIControlEventValueChanged];
         refreshControl.tag = [reactTag integerValue];
-        [scrollView addSubview:refreshControl];
+        [scrollView insertSubview:refreshControl atIndex:0];
         callback(@[[NSNull null], reactTag]);
     }];
 }
