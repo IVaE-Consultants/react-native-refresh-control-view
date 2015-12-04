@@ -2,10 +2,11 @@ var React = require('react-native');
 var {
   ListView,
   ScrollView,
-  findNodeHandle
+  findNodeHandle,
+  NativeModules,
 } = React;
 
-var RCTRefreshControl = require('NativeModules').RefreshControlViewManager;
+var RCTRefreshControl = NativeModules.RefreshControlViewManager;
 var {
   DeviceEventEmitter
 } = React;

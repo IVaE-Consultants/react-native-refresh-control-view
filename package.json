@@ -1,6 +1,6 @@
 {
   "name": "react-native-refresh-control-view",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pull-To-Refresh Implementation of UIRefreshControl wrapped inside UIScrollView.",
   "main": "index.js",
   "scripts": {
