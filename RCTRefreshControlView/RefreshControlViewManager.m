@@ -2,7 +2,6 @@
 
 #import "RefreshControlViewManager.h"
 #import "RCTUIManager.h"
-#import "RCTSparseArray.h"
 #import "UIView+React.h"
 #import "RCTScrollView.h"
 
@@ -16,7 +15,7 @@ RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(create:(nonnull NSNumber *)reactTag
                   options:(nonnull NSDictionary *)options
                   callback:(RCTResponseSenderBlock)callback) {
-    [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, RCTSparseArray *viewRegistry) {
+    [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary *viewRegistry) {
         UIView *view = viewRegistry[reactTag];
         if (!view) {
             RCTLogError(@"Cannot find view with tag #%@", reactTag);
@@ -35,7 +34,7 @@ RCT_EXPORT_METHOD(create:(nonnull NSNumber *)reactTag
 }
 
 RCT_EXPORT_METHOD(endRefreshing:(nonnull NSNumber *)reactTag) {
-    [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, RCTSparseArray *viewRegistry) {
+    [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary *viewRegistry) {
 
         UIView *view = viewRegistry[reactTag];
         if (!view) {
